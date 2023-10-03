@@ -41,5 +41,28 @@ public class App {
             System.out.println(Arrays.toString(chessArray[i]));
         }
 
+        System.out.println("Задание* : Введите размерность массива n");
+        int n = scaner.nextInt();
+        System.out.println("Задание* : Введите размерность массива m");
+        int m = scaner.nextInt();
+
+        String snake[][] = new String[n][m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i % 2 == 0) {
+                    snake[i][j] = String.format("%03d", (i * m) + j);
+                } else {
+                    snake[i][m - j - 1] = String.format("%03d", (i * m) + j);
+                }
+
+            }
+
+        }
+        System.out.println("Массив змейкой");
+        for (int i = 0; i < snake.length; i++) {
+            System.out.println(Arrays.toString(snake[i]));
+        }
+
     }
 }
