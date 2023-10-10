@@ -9,7 +9,7 @@ public class Therapist extends Doctor {
     }
 
     public void treat() {
-        System.out.println("Терапевт начинает лечить");
+        System.out.println("Терапевт начинает лечить ");
         int plan = 0;
         try {
             plan = patient.getTreatment_plan();
