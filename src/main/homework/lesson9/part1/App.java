@@ -1,4 +1,4 @@
-package main.homework.lesson9;
+package main.homework.lesson9.part1;
 
 public class App {
     public static void main(String[] args) throws Exception {
