@@ -8,6 +8,6 @@ public class Omnivore extends Animal {
 
     }
     public void voice() {
-        System.out.println(" Всеядное животное издает звук");
+        System.out.println(" Всеядное животное издает звук!");
     }
 }
