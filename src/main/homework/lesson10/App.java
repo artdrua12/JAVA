@@ -70,7 +70,7 @@ public class App {
                 if (isGood) {
                     System.out.println("Строка состоящая из различных символов " + array[i] + '\n');
                     System.out.println("good" + array[i]);
-                    return;
+                    break;
                 } else {
                     isGood = true;
                 }
