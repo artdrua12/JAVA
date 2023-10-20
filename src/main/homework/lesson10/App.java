@@ -61,6 +61,28 @@ public class App {
             System.out.println("Строки, которая меньше средней, нет \n");
         }
 
+        // Задача_4
+        System.out.println("Задание_4");
+        for (int i = 0; i < array.length; i++) {
+            char[] charArray = array[i].toCharArray();
+            String worter = "";
+
+            for (int j = 0; j < charArray.length; j++) {
+                if (array[i].indexOf(charArray[j], j + 1) > -1) {
+                    break;
+                }
+                if (j == charArray.length - 1) {
+                    worter = array[i];
+                    break;
+                }
+            }
+
+            if (!worter.equals("")) {
+                System.out.println("Строка состоящая из различных символов " + worter + '\n');
+                break;
+            }
+        }
+
         // Задача_5
         System.out.println("Задание_5");
         StringBuffer[] arrayBufer = new StringBuffer[3];
@@ -70,25 +92,27 @@ public class App {
             for (int j = 0; j < charArray.length; j++) {
                 arrayBufer[i].insert(j * 2, charArray[j]);
             }
-            System.out.println(arrayBufer[i].toString());
+            System.out.println(array[i] + " => " + arrayBufer[i].toString() + "\n");
         }
-        System.out.println();
+        // Задача_*
+        System.out.println("Задание_*");
+        System.out.println("Введите строку");
+        String line = scaner.nextLine();
+        System.out.println("Введите число, какое слово будет проверено на полиндром");
+        int num = scaner.nextInt() - 1;
 
-        // Задача_4
-        System.out.println("Задание_4");
-        for (int i = 0; i < array.length; i++) {
-            char[] charArray = array[i].toCharArray();
-
-            for (int j = 0; j < charArray.length; j++) {
-                if (array[i].indexOf(charArray[j], j + 1) > -1) {
-                    break;
-                }
-                if (j == charArray.length - 1) {
-                    System.out.println("Строка состоящая из различных символов " + array[i]);
-                    return;
-                }
+        String[] words = line.split(" ");
+        if (num > words.length) {
+            System.out.println("Введенное число больше чем количество слов в строке");
+        } else {
+            StringBuilder strb = new StringBuilder(words[num]);
+            String reverse = strb.reverse().toString();
+            if (reverse.equalsIgnoreCase(words[num])) {
+                System.out.println(words[num] + " Является полиндромом");
+            } else {
+                System.out.println(words[num] + "Не является полиндромом");
             }
-        }
 
+        }
     }
 }
