@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // Scanner scaner = new Scanner(System.in);
-        // System.out.println("Введите три строки");
+        Scanner scaner = new Scanner(System.in);
+        System.out.println("Введите три строки");
         String array[] = new String[3];
-        array[0] = "1223";
-        array[1] = "abc";
-        array[2] = "ccba";
-        // array[0] = scaner.nextLine();
-        // array[1] = scaner.nextLine();
-        // array[2] = scaner.nextLine();
+        // array[0] = "1223";
+        // array[1] = "abc";
+        // array[2] = "ccba";
+        array[0] = scaner.nextLine();
+        array[1] = scaner.nextLine();
+        array[2] = scaner.nextLine();
 
         // Задача_1
         String strMax = array[0];
