@@ -7,12 +7,15 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Scanner scaner = new Scanner(System.in);
-        System.out.println("Введите три строки");
+        // Scanner scaner = new Scanner(System.in);
+        // System.out.println("Введите три строки");
         String array[] = new String[3];
-        array[0] = scaner.nextLine();
-        array[1] = scaner.nextLine();
-        array[2] = scaner.nextLine();
+        array[0] = "1223";
+        array[1] = "abc";
+        array[2] = "ccba";
+        // array[0] = scaner.nextLine();
+        // array[1] = scaner.nextLine();
+        // array[2] = scaner.nextLine();
 
         // Задача_1
         String strMax = array[0];
@@ -32,7 +35,8 @@ public class App {
         }
         System.out.println("\nЗадание_1");
         System.out.println("Самая длинная строка " + strMax + " длина " + max);
-        System.out.println("Самая короткая строка " + strMin + " длина " + min + "\n");
+        System.out.println("Самая короткая строка " + strMin + " длина " + min +
+                "\n");
 
         // Задача_2
         for (int i = 0; i < array.length; i++) {
@@ -51,31 +55,39 @@ public class App {
         System.out.println("Задание_3");
         if (array[0].length() < array[1].length()) {
             System.out
-                    .println("Строки длина которых меньше средней " + array[0] + " длина " + array[0].length() + '\n');
+                    .println("Строки длина которых меньше средней " + array[0] + " длина " +
+                            array[0].length() + '\n');
         } else {
             System.out.println("Строки, которая меньше средней, нет \n");
         }
 
+        // Задача_5
+        System.out.println("Задание_5");
+        StringBuffer[] arrayBufer = new StringBuffer[3];
+        for (int i = 0; i < array.length; i++) {
+            char[] charArray = array[i].toCharArray();
+            arrayBufer[i] = new StringBuffer(array[i]);
+            for (int j = 0; j < charArray.length; j++) {
+                arrayBufer[i].insert(j * 2, charArray[j]);
+            }
+            System.out.println(arrayBufer[i].toString());
+        }
+        System.out.println();
+
         // Задача_4
         System.out.println("Задание_4");
         for (int i = 0; i < array.length; i++) {
-            char[] result = array[i].toCharArray();
-            boolean isGood = true;
-            for (int j = 0; j < result.length; j++) {
-                if (array[i].indexOf(result[j], j + 1) > -1) {
-                    System.out.println("result[j]" + array[i].indexOf(result[j], j));
-                    isGood = false;
-                    continue;
-                }
-                if (isGood) {
-                    System.out.println("Строка состоящая из различных символов " + array[i] + '\n');
-                    System.out.println("good" + array[i]);
+            char[] charArray = array[i].toCharArray();
+
+            for (int j = 0; j < charArray.length; j++) {
+                if (array[i].indexOf(charArray[j], j + 1) > -1) {
                     break;
-                } else {
-                    isGood = true;
+                }
+                if (j == charArray.length - 1) {
+                    System.out.println("Строка состоящая из различных символов " + array[i]);
+                    return;
                 }
             }
-
         }
 
     }
