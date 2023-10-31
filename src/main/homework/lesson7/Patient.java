@@ -3,10 +3,17 @@ package main.homework.lesson7;
 public class Patient {
 
     private String doctor;
-    private int treatment_plan;
+    private int treatmentPlan;
 
-    public Patient(int treatment_plan) {
-        this.treatment_plan = treatment_plan;
+    public Patient() {
+    }
+
+    public int getTreatmentPlan() {
+        return treatmentPlan;
+    }
+
+    public void setTreatmentPlan(int treatmentPlan) {
+        this.treatmentPlan = treatmentPlan;
     }
 
     public String getDoctor() {
@@ -17,11 +24,4 @@ public class Patient {
         this.doctor = doctor;
     }
 
-    public int getTreatment_plan() {
-        return treatment_plan;
-    }
-
-    public void setTreatment_plan(int treatment_plan) {
-        this.treatment_plan = treatment_plan;
-    }
 }

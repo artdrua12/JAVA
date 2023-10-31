@@ -1,5 +1,7 @@
 package main.homework.lesson7;
 
+import java.util.Random;
+
 public class Therapist extends Doctor {
 
     private Patient patient;
@@ -8,11 +10,25 @@ public class Therapist extends Doctor {
         this.patient = patient;
     }
 
+    public void prescription(){
+       System.out.println("Терапевт назначает врача ");
+       patient.setTreatmentPlan(random());
+    }
+
+    private int random() {
+        int min = 1;
+        int max = 2;
+        int diff = max - min;
+        Random random = new Random();
+        int i = random.nextInt(diff + 1);
+        return i += min;
+    }
+
     public void treat() {
         System.out.println("Терапевт начинает лечить ");
         int plan = 0;
         try {
-            plan = patient.getTreatment_plan();
+            plan = patient.getTreatmentPlan();
         } catch (Exception e) {
             System.out.println(" У пациента нет валидного плана лечения");
         }
