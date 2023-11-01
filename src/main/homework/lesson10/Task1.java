@@ -14,7 +14,6 @@ public class Task1 {
         }
         System.out.println("Самая длинная строка " + strMax + " длина " + max);
         return strMax;
-
     }
 
     static String shortLine(String[] array) {

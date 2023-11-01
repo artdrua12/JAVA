@@ -13,8 +13,6 @@ public class Task2 {
                 }
             }
         }
-        System.out.println("Упорядоченые строки " + Arrays.toString(array) + "\n");
-
         return array;
     }
 

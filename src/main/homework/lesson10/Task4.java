@@ -18,7 +18,7 @@ public class Task4 {
             }
 
             if (!worter.equals("")) {
-                return ("Строка состоящая из различных символов " + worter + '\n');
+                return worter;
             }
         }
         return "Строки состоящей из различных символов нет";

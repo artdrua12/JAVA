@@ -1,8 +1,7 @@
 package main.homework.lesson10;
 
 public class Task5 {
-    static two(String[]array){
-        
+    static StringBuffer[] two(String[] array) {
         StringBuffer[] arrayBufer = new StringBuffer[3];
         for (int i = 0; i < array.length; i++) {
             char[] charArray = array[i].toCharArray();
@@ -10,7 +9,8 @@ public class Task5 {
             for (int j = 0; j < charArray.length; j++) {
                 arrayBufer[i].insert(j * 2, charArray[j]);
             }
-            System.out.println(array[i] + " => " + arrayBufer[i].toString() + "\n");
+            // System.out.println(array[i] + " => " + arrayBufer[i].toString() + "\n");
         }
+        return arrayBufer;
     }
 }
