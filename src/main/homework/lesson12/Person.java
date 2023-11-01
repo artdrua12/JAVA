@@ -7,7 +7,7 @@ public class Person {
     public Person() {
     }
 
-    static void checkPerson(String login, String password, String confirmPassword) throws WrongLogin, WrongPassword {
+    public static String checkPerson(String login, String password, String confirmPassword) throws WrongLogin, WrongPassword {
         if (login.length() >= 20) {
             throw new WrongLogin("Длина не должна быть более 20 символов");
         }
@@ -20,6 +20,8 @@ public class Person {
                 || !password.equals(confirmPassword)) {
             throw new WrongPassword();
         }
+
+        return "Проверка пройдена";
     }
 
 }
