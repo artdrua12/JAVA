@@ -1,7 +1,7 @@
 package main.homework.lesson10;
 
 public class Task4 {
-    static String different(String[] array) {
+    public static String different(String[] array) {
 
         for (int i = 0; i < array.length; i++) {
             char[] charArray = array[i].toCharArray();
@@ -18,7 +18,7 @@ public class Task4 {
             }
 
             if (!worter.equals("")) {
-                return worter;
+                return  worter ;
             }
         }
         return "Строки состоящей из различных символов нет";

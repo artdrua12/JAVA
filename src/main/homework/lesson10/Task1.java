@@ -2,7 +2,7 @@ package main.homework.lesson10;
 
 public class Task1 {
 
-    static String longLine(String[] array) {
+    public static String longLine(String[] array) {
 
         String strMax = array[0];
         int max = array[0].length();
@@ -16,7 +16,7 @@ public class Task1 {
         return strMax;
     }
 
-    static String shortLine(String[] array) {
+    public static String shortLine(String[] array) {
 
         String strMin = array[0];
         int min = array[0].length();

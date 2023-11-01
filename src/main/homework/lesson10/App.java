@@ -9,7 +9,7 @@ public class App {
         Scanner scaner = new Scanner(System.in);
         System.out.println("Введите три строки");
         String array[] = new String[3];
-        
+
         array[0] = scaner.nextLine();
         array[1] = scaner.nextLine();
         array[2] = scaner.nextLine();
@@ -43,5 +43,7 @@ public class App {
         int num = scaner.nextInt() - 1;
 
         System.out.println(TaskStar.polindrom(line, num));
+
+        scaner.close();
     }
 }
