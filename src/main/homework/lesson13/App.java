@@ -1,36 +1,38 @@
 package main.homework.lesson13;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class App {
 
     public static void main(String[] args) {
-        // try (BufferedReader reader = new BufferedReader(
-        // new FileReader("Java/src/main/homework/lesson13/fileOut.txt"))) {
-        // String line = reader.readLine();
-        // String line2 = "gfhjsdf dshgfa ah dg";
-        // String maxLengthWord = "";
+        try (BufferedReader reader = new BufferedReader(
+                new FileReader("Java/src/main/homework/lesson13/fileOut.txt"))) {
+            String line = reader.readLine();
+            // String line2 = "gfhjsdf dshgfa ah dg";
+            String maxWord = "";
 
-        // while (line != null) {
-        // line = reader.readLine();
+            while (line != null) {
+                line = reader.readLine();
+                String currentWord = findLongWord(line, maxWord);
+                if (currentWord.length() > maxWord.length()) {
+                    maxWord = currentWord;
+                }
+            }
+
+            System.out.println("Максимальное слово " + maxWord);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // String line2 = "gfhjsdf dshgfa ah dg abcdefghijkl";
+        // String maxLengthWord = "fdf";
+
         // String currentWord = findLongWord(line2, maxLengthWord);
-        // if (currentWord.length() < maxLengthWord.length()) {
-        // maxLengthWord = currentWord;
-        // }
-        // }
-
-        // System.out.println("Максимальное слово " + maxLengthWord);
-
-        // } catch (IOException e) {
-        // e.printStackTrace();
-        // }
-        String line2 = "gfhjsdf  dshgfa  ah dg";
-        String maxLengthWord = "fdf";
-
-        findLongWord(line2, maxLengthWord);
-        // if (currentWord.length() < maxLengthWord.length()) {
+        // if (currentWord.length() > maxLengthWord.length()) {
         // maxLengthWord = currentWord;
         // }
 
@@ -38,39 +40,22 @@ public class App {
 
     }
 
-    public static void findLongWord(String line, String maxLengthWord) {
-        Pattern pattern = Pattern.compile("[а-яА-Яa-zA-Z]{2,}");
+    public static String findLongWord(String line, String maxWord) {
+        int lengthMaxWord = maxWord.length() + 1;
+        Pattern pattern = Pattern.compile("[а-яА-Яa-zA-Z]{" + lengthMaxWord + ",}");
         Matcher matcher = pattern.matcher(line);
 
-        ArrayList<String> words = new ArrayList<>();
-        // String maxWord = maxLengthWord;
+        String maxLength = "";
 
         while (matcher.find()) {
-
-            words.add(line.substring(matcher.start(), matcher.end()));
-            // String[] wordsArray = (String[]) words.toArray();
-            // String word = maxWords(wordsArray);
-            // if (maxWord.length() < word.length()) {
-            // maxWord = word;
+            String word = line.substring(matcher.start(), matcher.end());
+            System.out.println("word.length() " + word.length());
+            // if (word.length() > maxLength.length()) {
+            //     maxLength = word;
             // }
-            // words.clear();
         }
-        System.out.println(words.toString());
-
-        // return maxWord;
+        System.out.println("maxWord " + maxLength);
+        return maxLength;
     }
 
-    public static String maxWords(String[] array) {
-
-        int max = array[0].length();
-        String strMax = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i].length() > max) {
-                max = array[i].length();
-                strMax = array[i];
-            }
-        }
-        return strMax;
-    }
 }
