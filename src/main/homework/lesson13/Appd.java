@@ -47,7 +47,8 @@ public class Appd {
 
         while (matcher.find()) {
             words.add(line.substring(matcher.start(), matcher.end()));
-            String word = maxWord(words.toArray());
+            String[] wordsArray = (String[]) words.toArray();
+            String word = maxWords(wordsArray);
             if (maxWord.length() < word.length()) {
                 maxWord = word;
             }
@@ -57,7 +58,7 @@ public class Appd {
         return maxWord;
     }
 
-    public static String maxWord(String[] array) {
+    public static String maxWords(String[] array) {
 
         int max = array[0].length();
         String strMax = array[0];
