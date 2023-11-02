@@ -1,6 +1,5 @@
 package main.homework.lesson10;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -114,5 +113,7 @@ public class App {
             }
 
         }
+        scaner.close();
     }
+
 }

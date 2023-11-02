@@ -40,6 +40,6 @@ public class App {
         while (matcher4.find()) {
             System.out.println(line2.substring(matcher4.start(), matcher4.end()));
         }
-
+        scaner.close();
     }
 }
