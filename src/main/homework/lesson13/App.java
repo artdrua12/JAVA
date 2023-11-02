@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Appd {
+public class App {
 
     public static void main(String[] args) {
         // try (BufferedReader reader = new BufferedReader(
@@ -29,33 +29,35 @@ public class Appd {
         String line2 = "gfhjsdf  dshgfa  ah dg";
         String maxLengthWord = "fdf";
 
-        String currentWord = findLongWord(line2, maxLengthWord);
-        if (currentWord.length() < maxLengthWord.length()) {
-            maxLengthWord = currentWord;
-        }
+        findLongWord(line2, maxLengthWord);
+        // if (currentWord.length() < maxLengthWord.length()) {
+        // maxLengthWord = currentWord;
+        // }
 
-        System.out.println("Максимальное слово " + maxLengthWord);
+        // System.out.println("Максимальное слово " + maxLengthWord);
 
     }
 
-    public static String findLongWord(String line, String maxLengthWord) {
+    public static void findLongWord(String line, String maxLengthWord) {
         Pattern pattern = Pattern.compile("[а-яА-Яa-zA-Z]{2,}");
         Matcher matcher = pattern.matcher(line);
 
         ArrayList<String> words = new ArrayList<>();
-        String maxWord = maxLengthWord;
+        // String maxWord = maxLengthWord;
 
         while (matcher.find()) {
-            words.add(line.substring(matcher.start(), matcher.end()));
-            String[] wordsArray = (String[]) words.toArray();
-            String word = maxWords(wordsArray);
-            if (maxWord.length() < word.length()) {
-                maxWord = word;
-            }
-            words.clear();
-        }
 
-        return maxWord;
+            words.add(line.substring(matcher.start(), matcher.end()));
+            // String[] wordsArray = (String[]) words.toArray();
+            // String word = maxWords(wordsArray);
+            // if (maxWord.length() < word.length()) {
+            // maxWord = word;
+            // }
+            // words.clear();
+        }
+        System.out.println(words.toString());
+
+        // return maxWord;
     }
 
     public static String maxWords(String[] array) {
