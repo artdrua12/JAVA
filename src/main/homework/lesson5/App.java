@@ -62,8 +62,8 @@ public class App {
         System.out.println("Массив змейкой");
         for (int i = 0; i < snake.length; i++) {
             System.out.println(Arrays.toString(snake[i]));
-            
-        }
 
+        }
+        scaner.close();
     }
 }
