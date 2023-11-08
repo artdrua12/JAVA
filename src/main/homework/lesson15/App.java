@@ -19,8 +19,8 @@ public class App {
         int[] array = new int[] { 1, 2, 3, -2, -3 };
 
         List<int[]> names = Arrays.asList(array);
-        Predicate<? super int[]> positive = s -> s > 0;
-        names.stream().filter(positive).forEach(System.out::println);
+        Predicate<Integer> positive = s -> s > 0;
+        System.out.println(positive.test(-6));
 
     }
 }
