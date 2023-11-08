@@ -33,19 +33,19 @@ public class Student {
         this.curse = curse;
     }
 
-    public int average(int[] array) {
+    public int average() {
 
         int summa = 0;
-        for (int i = 0; i < array.length; i++) {
-            summa += array[i];
+        for (int i = 0; i < this.grade.length; i++) {
+            summa += this.grade[i];
         }
-        return Math.round(summa / array.length);
+        return Math.round(summa / this.grade.length);
 
     }
 
-    public Boolean checkStudent() {
-        int grade = this.average(this.grade);
-        if (grade < 3) {
+    public Boolean isStudent(int num) {
+        int averageGrade = this.average();
+        if (averageGrade < num) {
             return false;
         } else {
             return true;
