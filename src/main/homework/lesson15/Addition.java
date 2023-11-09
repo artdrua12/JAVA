@@ -68,4 +68,12 @@ public class Addition {
         return up;
     }
 
+
+    // @FunctionalInterface
+    // public interface  BiMaper <T ,B, R> {
+    //     R map (T first,B second);
+        
+    // }
+    
+
 }
