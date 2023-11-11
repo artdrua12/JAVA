@@ -18,12 +18,13 @@ public class Accounds {
     public static List<String> findAccounts(String line) {
         Pattern pattern = Pattern
                 .compile(
-                        "(\\d{5}-\\d{5})[\\s\\.]{0,3}[a-zA-Zа-яА-Я]{0,3}[\\s\\.]{0,3}(\\d{5}-{1}\\d{5})[\\s.]{0,3}(\\d{1,10})");
+                        "(\\d{5}-\\d{5})[\\s\\.]{0,3}[\\sa-zA-Zа-яА-Я]{0,15}[\\s\\.]{0,3}(\\d{5}-{1}\\d{5})[\\sa-zA-Zа-яА-Я]{0,15}{0,15}(\\d{1,10}[.,]{0,1}\\d{0,10})");
         Matcher matcher = pattern.matcher(line);
         List<String> words = new ArrayList<>();
 
         while (matcher.find()) {
-            words.add(line.substring(matcher.start(), matcher.end()) + "\n");
+            words.add("Date of processing " + WorkWichData.curentDate() + " from " + matcher.group(1) + " to "
+                    + matcher.group(2) + " amount " + matcher.group(3) + "$\n");
         }
         return words;
     }

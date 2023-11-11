@@ -1,0 +1,14 @@
+Date of processing 2023-11-11 from 12345-54321 to 12335-54321 amount 1000$
+Date of processing 2023-11-11 from 12345-54321 to 12335-54321 amount 2000$
+Date of processing 2023-11-11 from 12345-54921 to 12735-54321 amount 3000$
+Date of processing 2023-11-11 from 12345-54321 to 12935-54321 amount 120,14$
+Date of processing 2023-11-11 from 72345-54321 to 12335-54821 amount 1580$
+Date of processing 2023-11-11 from 17345-54321 to 12835-54321 amount 3450.$
+Date of processing 2023-11-11 from 12345-54321 to 12335-54321 amount 2200.3$
+Date of processing 2023-11-11 from 12345-54321 to 12335-54321 amount 2000,434$
+Date of processing 2023-11-11 from 12345-54921 to 12735-54321 amount 3000.12$
+Date of processing 2023-11-11 from 12345-54321 to 12935-54321 amount 1600,078$
+Date of processing 2023-11-11 from 72345-54321 to 12335-54821 amount 1580$
+Date of processing 2023-11-11 from 17345-54321 to 12835-54321 amount 3450$
+Date of processing 2023-11-11 from 12345-54321 to 12335-54321 amount 2200$
+Date of processing 2023-11-11 from 12345-54321 to 12335-03931 amount 1990$

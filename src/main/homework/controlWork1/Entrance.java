@@ -10,7 +10,7 @@ public class Entrance {
         try (Scanner scaner = new Scanner(System.in)) {
 
             System.out.println("Введите число для работы");
-            System.out.println("1 - вызов операции парсинга файлов перевода из input,");
+            System.out.println("1 - вызов операции парсинга файлов перевода из input.");
             System.out.println("2 - вызов операции вывода списка всех переводов из файла-отчета.");
             System.out.println("3 - выход из программы");
 
@@ -21,13 +21,13 @@ public class Entrance {
                 try {
                     int value = Integer.parseInt(str.trim());
                     if (value == 1) {
-                        System.out.println("1");
+                        System.out.println("вызов операции парсинга файлов перевода из input:");
                         return 1;
                     } else if (value == 2) {
-                        System.out.println("2");
+                        System.out.println("вызов операции вывода списка всех переводов из файла-отчета:");
                         return 2;
                     } else if (value == 3) {
-                        System.out.println("exit");
+                        System.out.println("программа завершила работу.");
                         return 3;
                     } else {
                         System.out.println("Введите число от 1 до 3");
