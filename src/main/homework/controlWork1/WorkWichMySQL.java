@@ -20,7 +20,7 @@ public class WorkWichMySQL {
 
     public static void clearTable() {
 
-        String query = "DELETE FROM operation.tableoperations;";
+        String query = "TRUNCATE operation.tableoperations;";
         try {
             con = DriverManager.getConnection(url, user, password);
             stmt = con.createStatement();
