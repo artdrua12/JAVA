@@ -1,5 +1,6 @@
 package main.homework.lesson16;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Введите числа в поток \n0(с новой строчки) - завершение ввода");
         try (Scanner scanner = new Scanner(System.in)) {
-            List<Integer> list = Stream.generate(scanner::nextInt)
+            ArrayList<Integer> list = (ArrayList<Integer>) Stream.generate(scanner::nextInt)
                     .takeWhile(s -> s != 0)
                     .map(Integer::valueOf)
                     .filter(el -> el % 2 == 0)
