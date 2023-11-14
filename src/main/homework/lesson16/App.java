@@ -18,8 +18,8 @@ public class App {
                     .collect(Collectors.toList());
             System.out.println("Отфильтрованная коллекция " + list);
 
-            Integer list2 = list.stream().reduce(0, (subtotal, element) -> subtotal + element);
-            System.out.println("Сумма коллекции " + list2);
+            Integer summa = list.stream().reduce(0, (subtotal, element) -> subtotal + element);
+            System.out.println("Сумма коллекции " + summa);
         }
     }
 }
