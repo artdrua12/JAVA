@@ -1,18 +1,23 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+# Привет мой друг! #
+Я рад представить тебе свою первую контрольную работу на Java. Главная задача которой
+Создание программу для выполнения денежного перевода с одного счета на другой.
+Предварительно в программ находится файл с номерами счетов и суммами
+на них. При запуске программа должна ожидать ввода информации из консоли.
+При выборе функции парсинга программа должна парсить все подходящие файлы из
+каталога ‘input’ и перенести распаршеные файлы в другой каталог ‘archive’. В
+результате парсинга файлов программа должна сформировать/обновить файл-отчет и
+обновить информацию в файле с номерами счетов и суммами до актуальных.
+При запуске программа ожидает ввод информации:
+в консоль введено 1 - вызов операции парсинга файлов перевода из input,
+в консоль введено 2 - вызов операции вывода списка всех переводов из файла-
+отчета.
+в консоль введено 3 - выход из программы.
+Программа обрабатывает файлы формата txt.
+Файлы должны содержать поля:
+● номер счета с (10 цифр ХХХХХ-ХХХХХ);
+● номер счета на (10 цифр ХХХХХ-ХХХХХ);
+● сумма для перевода (только целые числа).
+Входной файл может содержать любое количество других полей, но во время
+обработки файла нужно получать информацию только из трех вышеописанных.
+Выходной файл-отчет должен содержит список обработанных операций с указанием
+файла, статуса операции, даты и время операции.
