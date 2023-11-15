@@ -27,6 +27,7 @@ public class MyHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        // https://www.digitalocean.com/community/tutorials/java-sax-parser-example
 
         if (qName.equalsIgnoreCase("Employee")) {
             // create a new Employee and put it in Map
