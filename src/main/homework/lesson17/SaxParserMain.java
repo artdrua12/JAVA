@@ -19,18 +19,14 @@ public class SaxParserMain {
 
         BaeldungHandler baeldungHandler = new BaeldungHandler();
         saxParser.parse("Java/src/main/homework/lesson17/baeldung.xml", baeldungHandler);
-        Baeldung bd = baeldungHandler.getWebsite();
-        System.out.println("bd  " + bd.getArticleList().get(0).title);
+        List<String> bd = baeldungHandler.getWebsite();
+        System.out.println("bd " + bd.toString());
     }
 
     public static class BaeldungHandler extends DefaultHandler {
-        private static final String ARTICLES = "articles";
-        private static final String ARTICLE = "article";
-        private static final String TITLE = "title";
-        private static final String CONTENT = "content";
 
-        private Baeldung website;
         private StringBuilder elementValue;
+        public List<String> list = new ArrayList<>();
 
         @Override
         public void characters(char[] ch, int start, int length) throws SAXException {
@@ -49,42 +45,51 @@ public class SaxParserMain {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes)
                 throws SAXException {
-            switch (qName) {
-                case ARTICLES:
-                    website.setArticleList(new ArrayList<>());
-                    break;
-                case ARTICLE:
-                    website.getArticleList().add(new BaeldungArticle());
-                    break;
-                case TITLE:
-                    elementValue = new StringBuilder();
-                    break;
-                case CONTENT:
-                    elementValue = new StringBuilder();
-                    break;
+            if (qName.equalsIgnoreCase("title")) {
+                System.out.println("ddddd " + qName);
+                elementValue = new StringBuilder();
             }
+            // switch (qName) {
+            // case ARTICLES:
+            // website.setArticleList(new ArrayList<>());
+            // break;
+            // case ARTICLE:
+            // website.getArticleList().add(new BaeldungArticle());
+            // break;
+            // case TITLE:
+            // elementValue = new StringBuilder();
+            // break;
+            // case CONTENT:
+            // elementValue = new StringBuilder();
+            // break;
+            // }
         }
 
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
-            switch (qName) {
-                case TITLE:
-                    latestArticle().title = (elementValue.toString());
-                    break;
-                case CONTENT:
-                    latestArticle().content = (elementValue.toString());
-                    break;
+            // latestArticle().content = (elementValue.toString());
+            if (qName.equalsIgnoreCase("title")) {
+                list.add(elementValue.toString());
             }
+            // switch (qName) {
+            // case TITLE:
+            // latestArticle().title = (elementValue.toString());
+            // break;
+            // case CONTENT:
+            // latestArticle().content = (elementValue.toString());
+            // break;
+            // }
         }
 
-        private BaeldungArticle latestArticle() {
-            List<BaeldungArticle> articleList = website.getArticleList();
-            int latestArticleIndex = articleList.size() - 1;
-            return articleList.get(latestArticleIndex);
-        }
+        // private BaeldungArticle latestArticle() {
+        // List<BaeldungArticle> articleList = website.getArticleList();
+        // int latestArticleIndex = articleList.size() - 1;
+        // return articleList.get(latestArticleIndex);
+        // }
 
-        public Baeldung getWebsite() {
-            return (Baeldung) website;
+        public List<String> getWebsite() {
+            // return (Baeldung) website;
+            return list;
         }
     }
 
@@ -101,7 +106,7 @@ public class SaxParserMain {
     }
 
     public static class BaeldungArticle {
-        public String title;
+        // public String title;
         public String content;
     }
 }
