@@ -39,53 +39,23 @@ public class SaxParserMain {
 
         @Override
         public void startDocument() throws SAXException {
-            website = new Baeldung();
+
         }
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes)
                 throws SAXException {
             if (qName.equalsIgnoreCase("title")) {
-                System.out.println("ddddd " + qName);
                 elementValue = new StringBuilder();
             }
-            // switch (qName) {
-            // case ARTICLES:
-            // website.setArticleList(new ArrayList<>());
-            // break;
-            // case ARTICLE:
-            // website.getArticleList().add(new BaeldungArticle());
-            // break;
-            // case TITLE:
-            // elementValue = new StringBuilder();
-            // break;
-            // case CONTENT:
-            // elementValue = new StringBuilder();
-            // break;
-            // }
         }
 
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
-            // latestArticle().content = (elementValue.toString());
             if (qName.equalsIgnoreCase("title")) {
                 list.add(elementValue.toString());
             }
-            // switch (qName) {
-            // case TITLE:
-            // latestArticle().title = (elementValue.toString());
-            // break;
-            // case CONTENT:
-            // latestArticle().content = (elementValue.toString());
-            // break;
-            // }
         }
-
-        // private BaeldungArticle latestArticle() {
-        // List<BaeldungArticle> articleList = website.getArticleList();
-        // int latestArticleIndex = articleList.size() - 1;
-        // return articleList.get(latestArticleIndex);
-        // }
 
         public List<String> getWebsite() {
             // return (Baeldung) website;
@@ -93,20 +63,4 @@ public class SaxParserMain {
         }
     }
 
-    public static class Baeldung {
-        private List<BaeldungArticle> articleList;
-
-        public void setArticleList(List<BaeldungArticle> articleList) {
-            this.articleList = articleList;
-        }
-
-        public List<BaeldungArticle> getArticleList() {
-            return this.articleList;
-        }
-    }
-
-    public static class BaeldungArticle {
-        // public String title;
-        public String content;
-    }
 }
