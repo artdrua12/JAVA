@@ -1,28 +1,26 @@
 package main.homework.lesson17;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import main.homework.lesson17.dom.XMLParserDom;
 
 public class App {
-    public static void main(String[] args) throws SAXException, IOException {
-        System.err.println(17);
-        // https://www.baeldung.com/java-xerces-dom-parsing
+    public static void main(String[] args) {
 
-        try {
-            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = builder.parse(new File("Java/src/main/homework/lesson17/employees.xml"));
-            doc.getDocumentElement().normalize();
-        } catch (ParserConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        // получение номера работы
+        int numWork = Entrance.enter.get();
+        // проверка нужен ли выход
+        if (numWork == 3)
+            return;
+
+        List<String> list = XMLParserDom.parser("Java/src/main/homework/lesson17/xml.xml", "list");
+        for (String l : list) {
+            System.out.println(l);
         }
 
     }
+
 }
