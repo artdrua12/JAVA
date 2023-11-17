@@ -14,22 +14,30 @@ public class App {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
         // Задача1 + Задача*
-
+        String[] array = new String[] { "lastName", "firstName", "title" };
+        String forWriteFile = "line";
+        List<String> listForNameFile = new ArrayList<>();
+        List<String> listForWriteFile = new ArrayList<>();
         // получение номера работы
         int numWork = Entrance.enter.get();
-        // проверка нужен ли выход
-        List<String> list = new ArrayList<>();
-        if (numWork == 3)
-            return;
-        else if (numWork == 1) {
-            list = new XMLParserSAX().parser("Java/src/main/homework/lesson17/xml.xml", "line");
-        } else if (numWork == 1) {
-            list = XMLParserDom.parser("Java/src/main/homework/lesson17/xml.xml", "line");
-        }
 
-        for (String lst : list) {
-            System.out.println(lst);
+        // получение номера для выбора парсера
+        if (numWork == 1) {
+            for (String str : array) {
+                listForNameFile.addAll(new XMLParserSAX().parser("Java/src/main/homework/lesson17/xml.xml", str));
+            }
+            listForWriteFile.addAll(new XMLParserSAX().parser("Java/src/main/homework/lesson17/xml.xml", forWriteFile));
+
+        } else if (numWork == 2) {
+            for (String str : array) {
+                listForNameFile.addAll(XMLParserDom.parser("Java/src/main/homework/lesson17/xml.xml", str));
+            }
+            listForWriteFile.addAll(XMLParserDom.parser("Java/src/main/homework/lesson17/xml.xml", forWriteFile));
+        } else {
+            return;
         }
+        // Запись в файл
+        WorkWichFiles.writeFile(listForNameFile, listForWriteFile);
 
     }
 
