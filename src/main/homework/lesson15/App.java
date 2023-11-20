@@ -31,6 +31,7 @@ public class App {
         // Задание5
         Supplier<String> s = Addition.upheaval();
         System.out.println("Задание5 = " + s.get());
+        
 
         // Addition.BiMaper<Integer ,Integer ,String> test = (first,second) ->{
         //    return first+second + " _ ";
