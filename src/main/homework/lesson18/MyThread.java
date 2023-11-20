@@ -1,27 +1,25 @@
 package main.homework.lesson18;
 
-import java.util.Arrays;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class MyThread extends Thread {
-    private Integer[] arr;
+    private int[] sortArray;
 
-    public MyThread(Integer[] arr) {
-        this.arr = arr;
+    public MyThread(int[] integers) {
+        this.sortArray = integers;
     }
 
-    public Integer[] print() {
+    public int[] sort(String methodName) throws NoSuchMethodException, SecurityException, IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException {
 
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j + 1] < arr[j]) {
-                    int swap = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = swap;
-                }
+        Method[] mthds = Sort.class.getDeclaredMethods();
+        for (Method mthd : mthds) {
+            if (mthd.getName().equals(methodName)) {
+                mthd.invoke(mthd, this.sortArray);
             }
         }
-        return arr;
-
+        return sortArray;
     }
 
 }
