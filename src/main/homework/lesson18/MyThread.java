@@ -22,4 +22,28 @@ public class MyThread extends Thread {
         return sortArray;
     }
 
+    public int seachMin(String methodName) throws NoSuchMethodException, SecurityException, IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException {
+
+        Method[] mthds = Sort.class.getDeclaredMethods();
+        for (Method mthd : mthds) {
+            if (mthd.getName().equals(methodName)) {
+                mthd.invoke(mthd, this.sortArray);
+            }
+        }
+        return sortArray[0];
+    }
+
+    public int seachMax(String methodName) throws NoSuchMethodException, SecurityException, IllegalAccessException,
+            IllegalArgumentException, InvocationTargetException {
+
+        Method[] mthds = Sort.class.getDeclaredMethods();
+        for (Method mthd : mthds) {
+            if (mthd.getName().equals(methodName)) {
+                mthd.invoke(mthd, this.sortArray);
+            }
+        }
+        return sortArray[sortArray.length - 1];
+    }
+
 }
