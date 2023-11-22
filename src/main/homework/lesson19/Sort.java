@@ -1,4 +1,4 @@
-package main.homework.lesson18;
+package main.homework.lesson19;
 
 public class Sort {
     public static int[] insertSort(int[] array) {

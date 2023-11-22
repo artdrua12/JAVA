@@ -1,9 +1,9 @@
-package main.homework.lesson18.Test;
+package main.homework.lesson19.Test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import main.homework.lesson18.Sort;
+import main.homework.lesson19.Sort;
 
 public class SortTest {
     @Test

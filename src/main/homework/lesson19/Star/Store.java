@@ -1,4 +1,4 @@
-package main.homework.lesson18.Star;
+package main.homework.lesson19.Star;
 
 import java.util.ArrayList;
 import java.util.List;

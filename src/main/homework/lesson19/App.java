@@ -1,4 +1,4 @@
-package main.homework.lesson18;
+package main.homework.lesson19;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import main.homework.lesson18.Star.Buyer;
-import main.homework.lesson18.Star.Manufacturer;
-import main.homework.lesson18.Star.Store;
+import main.homework.lesson19.Star.Buyer;
+import main.homework.lesson19.Star.Manufacturer;
+import main.homework.lesson19.Star.Store;
 
 public class App {
     // Задача 1:
