@@ -23,7 +23,7 @@ public class Account {
         List<String> words = new ArrayList<>();
 
         while (matcher.find()) {
-            words.add("Date of processing " + WorkWichData.curentDate() + " from " + matcher.group(1) + " to "
+            words.add("Date of processing " + DateUtil.curentDate() + " from " + matcher.group(1) + " to "
                     + matcher.group(2) + " amount " + matcher.group(3) + "$\n");
         }
         return words;

@@ -1,7 +1,7 @@
 package main.homework.controlWork1;
 import java.time.LocalDate;
 
-public class WorkWichData {
+public class DateUtil {
     public static String curentDate() {
         LocalDate localDate = LocalDate.now();
         return localDate.toString();

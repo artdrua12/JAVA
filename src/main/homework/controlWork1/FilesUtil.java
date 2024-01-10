@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class WorkWichFiles {
+public class FilesUtil {
 
     static public List<String> findFiles(String patch) {
         File folder = new File(patch);
@@ -28,7 +28,7 @@ public class WorkWichFiles {
             System.out.println(file.getName());
 
             Path p = file.toPath();
-            List<String> list = WorkWichFiles.readFile(p);
+            List<String> list = FilesUtil.readFile(p);
             acountList.addAll(Account.findAccountsFromList(list));
         }
         return acountList;

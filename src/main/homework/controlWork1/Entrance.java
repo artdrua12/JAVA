@@ -6,7 +6,7 @@ import java.util.function.Supplier;
 
 public class Entrance {
 
-    static Supplier<Integer> enter = () -> {
+    static Supplier<String> enter = () -> {
         try (Scanner scaner = new Scanner(System.in)) {
 
             System.out.println("Введите число для работы");
@@ -22,13 +22,13 @@ public class Entrance {
                     int value = Integer.parseInt(str.trim());
                     if (value == 1) {
                         System.out.println("вызов операции парсинга файлов перевода из input:");
-                        return 1;
+                        return "Java/src/main/homework/controlWork1/input/";
                     } else if (value == 2) {
                         System.out.println("вызов операции вывода списка всех переводов из файла-отчета:");
-                        return 2;
+                        return "Java/src/main/homework/controlWork1/archive/";
                     } else if (value == 3) {
                         System.out.println("программа завершила работу.");
-                        return 3;
+                        return "exit";
                     } else {
                         System.out.println("Введите число от 1 до 3");
                     }
@@ -38,12 +38,7 @@ public class Entrance {
             }
 
         }
-        return 3;
+        return "exit";
     };
-
-    static Function<Integer, String> patch = (num) -> {
-        return num == 2 ? "Java/src/main/homework/controlWork1/archive/" : "Java/src/main/homework/controlWork1/input/";
-    };
-
 
 }

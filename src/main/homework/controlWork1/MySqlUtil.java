@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class WorkWichMySQL {
+public class MySqlUtil {
 
     // JDBC URL, username and password of MySQL server
     private static final String url = "jdbc:mysql://localhost:3306/operation";
