@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 
-public class Accounds {
+public class Account {
 
     public static List<String> findAccountsFromList(List<String> list) {
         List<String> lines = new ArrayList<>();
         for (String el : list) {
-            lines.addAll(Accounds.findAccounts(el));
+            lines.addAll(Account.findAccounts(el));
         }
         return lines;
     }

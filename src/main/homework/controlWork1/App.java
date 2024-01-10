@@ -15,15 +15,15 @@ public class App {
         // поиск и чтение файлов c возвратом номеров счетов
         List<String> list = WorkWichFiles.findFiles(patch);
         // Очистка таблицы в БД
-        WorkWichMySQL.clearTable();
-        // Запись в файл
-        WorkWichFiles.writeFile(list);
-        // Запись в БД
-        for (String str : list) {
-            // System.out.println(str);
-            WorkWichMySQL.addData(str);
-        }
-        // Чтение из БД
-        WorkWichMySQL.readData();
+        // WorkWichMySQL.clearTable();
+        // // Запись в файл
+        // WorkWichFiles.writeFile(list);
+        // // Запись в БД
+        // for (String str : list) {
+        //     // System.out.println(str);
+        //     WorkWichMySQL.addData(str);
+        // }
+        // // Чтение из БД
+        // WorkWichMySQL.readData();
     }
 }
