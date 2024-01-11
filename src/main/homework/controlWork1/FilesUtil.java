@@ -46,7 +46,7 @@ public class FilesUtil {
 
     public static void writeFile(List<String> list) {
         try {
-            File outputFile = new File("src/main/homework/controlWork1/archive/outFile.txt");
+            File outputFile = new File("Java/src/main/homework/controlWork1/archive/outFile.txt");
             FileOutputStream outputStream = new FileOutputStream(outputFile, false);
             for (String el : list) {
                 byte[] strToBytes = el.getBytes();
