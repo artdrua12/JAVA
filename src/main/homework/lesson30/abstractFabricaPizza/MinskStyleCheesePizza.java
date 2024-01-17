@@ -1,4 +1,4 @@
-package main.homework.lesson30.abstractF;
+package main.homework.lesson30.abstractFabricaPizza;
 
 public class MinskStyleCheesePizza extends Pizza {
     @Override
