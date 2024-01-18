@@ -1,4 +1,4 @@
-package main.homework.lesson30;
+package main.homework.lesson30.singlton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
