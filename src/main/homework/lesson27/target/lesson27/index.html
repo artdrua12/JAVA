@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My time project!</title>
+  </head>
+  <body>
+    <div>
+    <h2>
+        Создать страничку, содержащую форму, Форма отправляет данные в post запросе servlet-у, если одно из 
+        полей не указано перенаправляем обратно на страничку ввода, иначе перенаправляем на страничку: "Заявка принята" +
+        данные из формы.
+    </h2>
+    <form method="post" action="/lesson27/permition">
+      <label>Name: <input type="text" name="name" /> </label>
+      <label>Product: <input type="text" name="product" /> </label>
+      <label>Price: <input type="text" name="price" /> </label>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>
