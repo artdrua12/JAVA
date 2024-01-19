@@ -1,6 +1,5 @@
 package main.homework.lesson12.Test;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import main.homework.lesson12.Person;

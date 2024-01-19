@@ -1,7 +1,7 @@
 package main.homework.lesson10.Test;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import main.homework.lesson10.TaskStar;
 
