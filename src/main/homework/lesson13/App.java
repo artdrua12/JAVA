@@ -5,7 +5,12 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
 public class App {
+    // Задача 1:
+    // В задании приложен файл Ромео и Джульетта на английском, вычитать его в
+    // приложении.
+    // Проанализировать и записать в другой файл самое длинное слово
 
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(
