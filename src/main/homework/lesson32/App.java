@@ -4,7 +4,7 @@ import main.homework.lesson32.frontControler.FrontController;
 import main.homework.lesson32.override.Person;
 import main.homework.lesson32.strategy.BubbleSortStrategy;
 import main.homework.lesson32.strategy.Sorter;
-
+//Реализовать frontController, Стратегию,DTO,переопределить toString hashCode equals
 public class App {
     public static void main(String[] args) {
         FrontController frontController = new FrontController();
