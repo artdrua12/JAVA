@@ -12,7 +12,7 @@ public class Task5Test {
         Assert.assertEquals(Task5.two(new String[] { "1", "2", "3" }), "[11, 22, 33]");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testTwo2() {
         
     }
