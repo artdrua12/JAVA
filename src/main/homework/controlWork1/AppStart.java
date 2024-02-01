@@ -11,8 +11,8 @@ public class AppStart {
         checkPach();
         if (this.patch.equals("exit"))
             return;
-        findReadFiles();
-        writeFileFile();
+        findFiles();
+        writeFiles();
     }
 
     // получение получение пути к файлам или выход
@@ -21,12 +21,12 @@ public class AppStart {
     }
 
     // поиск и чтение файлов c возвратом номеров счетов
-    private void findReadFiles() {
+    private void findFiles() {
         list = FilesUtil.findFiles(this.patch);
     }
 
     // Запись в файл
-    private void writeFileFile() {
+    private void writeFiles() {
         FilesUtil.writeFile(this.list);
     }
 }
